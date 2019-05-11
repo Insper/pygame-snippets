@@ -21,7 +21,7 @@ Vamos apresentar alguns exemplos de como fazer o personagem pular ao apertarmos 
 
 Um sprite sheet é uma imagem que é composta por diversos sprites do nosso jogo. É comum utilizarmos sprite sheets para armazenar sequências de quadros de uma animação. Um exemplo é a imagem a seguir:
 
-![Sprite sheet de um personagem]()
+![Sprite sheet de um personagem](https://github.com/Insper/pygame-snippets/blob/master/img/hero.png)
 
 Podemos dividir esse sprite sheet em 5 animações: personagem parado (primeira linha), personagem correndo (1a a 3a imagens da segunda linha), personagem pulando (4a imagem da segunda linha), personagem lutando (terceira linha) e personagem nadando (quarta linha).
 
