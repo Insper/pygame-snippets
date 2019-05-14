@@ -54,15 +54,20 @@ MAP = [
     [GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS, GRASS],
 ]
 
+# Define estados possíveis do jogador
+STILL = 0
+JUMPING = 1
+FALLING = 2
+
 # Classe Jogador que representa o herói
 class Tile(pygame.sprite.Sprite):
-    
+
     # Construtor da classe.
     def __init__(self, tile_img, row, column):
-        
+
         # Construtor da classe pai (Sprite).
         pygame.sprite.Sprite.__init__(self)
-        
+
         # Aumenta o tamanho do tile.
         tile_img = pygame.transform.scale(tile_img, (TILE_SIZE, TILE_SIZE))
 
@@ -70,7 +75,7 @@ class Tile(pygame.sprite.Sprite):
         self.image = tile_img
         # Detalhes sobre o posicionamento.
         self.rect = self.image.get_rect()
-        
+
         # Posiciona o tile
         self.rect.x = TILE_SIZE * column
         self.rect.y = TILE_SIZE * row
@@ -99,7 +104,7 @@ def game_screen(screen):
     # Carrega assets
     assets = load_assets(img_dir)
 
-    # Cria um de tiles.
+    # Cria um grupo de tiles.
     tiles = pygame.sprite.Group()
     # Cria tiles de acordo com o mapa
     for row in range(len(MAP)):
@@ -113,17 +118,17 @@ def game_screen(screen):
 
     state = PLAYING
     while state != DONE:
-        
+
         # Ajusta a velocidade do jogo.
         clock.tick(FPS)
-        
+
         # Processa os eventos (mouse, teclado, botão, etc).
         for event in pygame.event.get():
-            
+
             # Verifica se foi fechado.
             if event.type == pygame.QUIT:
                 state = DONE
-                
+
         # A cada loop, redesenha o fundo e os sprites
         screen.fill(BLACK)
         tiles.draw(screen)

@@ -13,9 +13,13 @@
 
 ## Fazendo o personagem pular
 
-Vamos apresentar alguns exemplos de como fazer o personagem pular ao apertarmos a tecla `ESPAÇO`. No primeiro exemplo ([jump.py](jump.py)) temos uma versão simplificada, assumindo que o chão está fixo em uma determinada altura.
+Vamos apresentar alguns exemplos de como fazer o personagem pular ao apertarmos a tecla `ESPAÇO` ou a seta para cima. No primeiro exemplo ([jump.py](jump.py)) temos uma versão simplificada, assumindo que o chão está fixo em uma determinada altura.
 
+Nesse primeiro exemplo, precisamos guardar uma variável com o estado do personagem. Se ele já estiver pulando, ele não pode pular novamente. Se ele estiver parado, ele pode pular.
 
+No segundo exemplo ([jump_block.py](jump_block.py)), adicionamos blocos que impedem o jogador de passar. Para entender melhor o posicionamento dos blocos, veja os exemplos de *tiles*. A cada `update` atualizamos a posição `x` e `y` separadamente. Se o jogador colidir com um bloco depois de atualizarmos a posição horizontal, reposicionamos o seu `x` baseado na localização do bloco colidido e no sentido na direção horizontal que o jogador estava andando. Se o jogador colidir depois de atualizarmos a posição vertical, reposicionamos seu `y` baseado na localização do bloco e no sentido na direção vertical do jogador.
+
+Em jogos de plataforma é comum termos alguns tipos de obstáculo que podem ser transpassados quando o jogador está pulando, mas "seguram" o jogador quando ele está caindo. O terceiro exemplo ([jump_platform.py](jump_platform.py)) mostra como podemos fazer isso. A cada `update`, se o jogador estiver pulando ou parado sobre uma plataforma, atualizamos a sua posição vertical no mapa. Assim, quando o jogador está caindo verificamos se a sua última posição antes de cair era maior do que as plataformas com as quais ele está colidindo. Nesse caso fazemos com que ele pare. Essa verificação da altura é importante, pois caso o jogador pule, mas não ultrapasse a altura da plataforma, ele não deve ser transportado para cima da plataforma durante a colisão.
 
 ## Alternando animações com sprite sheets
 
