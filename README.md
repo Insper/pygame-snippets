@@ -21,6 +21,16 @@ No segundo exemplo ([jump_block.py](jump_block.py)), adicionamos blocos que impe
 
 Em jogos de plataforma é comum termos alguns tipos de obstáculo que podem ser transpassados quando o jogador está pulando, mas "seguram" o jogador quando ele está caindo. O terceiro exemplo ([jump_platform.py](jump_platform.py)) mostra como podemos fazer isso. A cada `update`, se o jogador estiver pulando ou parado sobre uma plataforma, atualizamos a sua posição vertical no mapa. Assim, quando o jogador está caindo verificamos se a sua última posição antes de cair era maior do que as plataformas com as quais ele está colidindo. Nesse caso fazemos com que ele pare. Essa verificação da altura é importante, pois caso o jogador pule, mas não ultrapasse a altura da plataforma, ele não deve ser transportado para cima da plataforma durante a colisão.
 
+## Movendo o fundo
+
+É comum utilizarmos imagens cíclicas para representar o fundo do jogo, ou seja, imagens cujo lado direito e esquerdo se conectam. Assim podemos simular um fundo infinito em movimento com apenas uma imagem.
+
+A ideia é desenharmos sempre a imagem do fundo e uma cópia logo em seguida. A cada frame atualizamos a posição do fundo da imagem para simular o movimento. Além disso, quando o fundo sai da tela por completo, precisamos reposicioná-lo próximo à sua posição original. O arquivo [moving_brackground.py](moving_background.py) mostra como fazer isso.
+
+Nesse mesmo exemplo também mostramos como atualizar as posições dos objetos localizados no mundo. Caso queira modificar a velocidade do mundo ao longo do jogo, é necessário percorrer o grupo de sprites do mundo atualizando a sua velocidade.
+
+Finalmente, podemos criar um efeito de [paralaxe](https://en.wikipedia.org/wiki/Parallax) utilizando algumas camadas de imagens de fundo. Obtemos o efeito de paralaxe ao movimentar cada camada com uma velocidade diferente: as mais próximas se movem mais rapidamente e as mais distantes se movem mais lentamente. O arquivo [moving_background_parallax.py](moving_background_parallax.py) mostra como implementar o efeito de paralaxe.
+
 ## Alternando animações com sprite sheets
 
 Um sprite sheet é uma imagem que é composta por diversos sprites do nosso jogo. É comum utilizarmos sprite sheets para armazenar sequências de quadros de uma animação. Um exemplo é a imagem a seguir:
@@ -35,3 +45,4 @@ No arquivo [spritesheet.py](spritesheet.py) mostramos como usar um sprite sheet 
 
 - [`hero.png`](img/hero.png): [https://opengameart.org/content/classic-hero](https://opengameart.org/content/classic-hero)
 - [`32x32_map_tile v3.1 [MARGINLESS].png`](img/32x32_map_tile v3.1 [MARGINLESS].png): [https://opengameart.org/content/basic-map-32x32-by-silver-iv](https://opengameart.org/content/basic-map-32x32-by-silver-iv)
+- [`Fence Game Background for game developers.zip`](img/Fence Game Background for game developers.zip): [https://opengameart.org/content/bevouliin-free-fence-game-background-for-game-developers](https://opengameart.org/content/bevouliin-free-fence-game-background-for-game-developers)
