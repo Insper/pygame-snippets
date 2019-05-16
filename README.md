@@ -31,6 +31,14 @@ Nesse mesmo exemplo também mostramos como atualizar as posições dos objetos l
 
 Finalmente, podemos criar um efeito de [paralaxe](https://en.wikipedia.org/wiki/Parallax) utilizando algumas camadas de imagens de fundo. Obtemos o efeito de paralaxe ao movimentar cada camada com uma velocidade diferente: as mais próximas se movem mais rapidamente e as mais distantes se movem mais lentamente. O arquivo [moving_background_parallax.py](moving_background_parallax.py) mostra como implementar o efeito de paralaxe.
 
+Podemos também deixar o controle do movimento nas mãos do jogador. De modo geral, existem três maneiras de mover o jogador pelo mundo:
+
+1. O mundo fica parado e o jogador se move;
+2. O mundo se move e o jogador fica parado;
+3. O mundo se move e o jogador também se move;
+
+A terceira alternativa é uma combinação das duas primeiras. O arquivo [moving_background_fixed_player.py](moving_background_fixed_player.py) mostra como implementar a segunda opção, movendo somente no eixo x. O personagem possui um atributo com a velocidade em x, controlada pelo teclado. Entretanto, a velocidade em x não é utilizada para atualizar a posição do jogador, mas sim do fundo e dos objetos no mundo. Para simular o efeito de movimento, aplicamos a velocidade no sentido oposto ao do jogador. Ou seja, o jogador se mover para a direita enquanto o mundo está parado é equivalente ao mundo se mover para a esquerda enquanto o jogador está parado.
+
 ## Alternando animações com sprite sheets
 
 Um sprite sheet é uma imagem que é composta por diversos sprites do nosso jogo. É comum utilizarmos sprite sheets para armazenar sequências de quadros de uma animação. Um exemplo é a imagem a seguir:
