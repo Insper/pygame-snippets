@@ -4,12 +4,12 @@
 
 [![tiles.py](gifs/tiles.png)](tiles.py)
 
-*Tiles* permitem a construção de mapas através do nosso código. Ao invés de termos uma grande imagem para o fundo podemos construir um mapa a partir de unidades menores (os *tiles*). Isso nos dá algumas vantagens:
+_Tiles_ permitem a construção de mapas através do nosso código. Ao invés de termos uma grande imagem para o fundo podemos construir um mapa a partir de unidades menores (os _tiles_). Isso nos dá algumas vantagens:
 
 - Flexibilização dos mapas: podemos construir quantos mapas quisermos sem ter que gerar uma imagem diferente para cada um;
 - Controle de colisão: podemos tratar alguns tiles de maneira especial fazendo um tratamento de colisão. Alguns exemplos:
-    - Podemos impedir que o jogador passe por aquele ponto, criando tiles de parede ou chão, por exemplo (ver [jump_block.py](jump_block.py));
-    - Podemos criar tipos de terrenos distintos (verificamos quais tiles colidiram com o jogador e assim modificamos sua velocidade);
+  - Podemos impedir que o jogador passe por aquele ponto, criando tiles de parede ou chão, por exemplo (ver [jump_block.py](jump_block.py));
+  - Podemos criar tipos de terrenos distintos (verificamos quais tiles colidiram com o jogador e assim modificamos sua velocidade);
 - Mapa em camadas: podemos desenhar um tile sobre o outro, por exemplo, com um tile de arbusto sobre um tile de terra. Assim, quando o jogador corta o arbusto ele some, mas o de terra permanece.
 - As possibilidades são infinitas, use sua criatividade!
 
@@ -23,7 +23,7 @@ Nesse primeiro exemplo, precisamos guardar uma variável com o estado do persona
 
 [![jump.py](gifs/jump.gif)](jump.py)
 
-No segundo exemplo ([jump_block.py](jump_block.py)), adicionamos blocos que impedem o jogador de passar. Para entender melhor o posicionamento dos blocos, veja os exemplos de *tiles*. A cada `update` atualizamos a posição `x` e `y` separadamente. Se o jogador colidir com um bloco depois de atualizarmos a posição horizontal, reposicionamos o seu `x` baseado na localização do bloco colidido e no sentido na direção horizontal que o jogador estava andando. Se o jogador colidir depois de atualizarmos a posição vertical, reposicionamos seu `y` baseado na localização do bloco e no sentido na direção vertical do jogador.
+No segundo exemplo ([jump_block.py](jump_block.py)), adicionamos blocos que impedem o jogador de passar. Para entender melhor o posicionamento dos blocos, veja os exemplos de _tiles_. A cada `update` atualizamos a posição `x` e `y` separadamente. Se o jogador colidir com um bloco depois de atualizarmos a posição horizontal, reposicionamos o seu `x` baseado na localização do bloco colidido e no sentido na direção horizontal que o jogador estava andando. Se o jogador colidir depois de atualizarmos a posição vertical, reposicionamos seu `y` baseado na localização do bloco e no sentido na direção vertical do jogador.
 
 [![jump_block.py](gifs/jump_block.gif)](jump_block.py)
 
@@ -66,6 +66,14 @@ Podemos dividir esse sprite sheet em 5 animações: personagem parado (primeira 
 No arquivo [spritesheet.py](spritesheet.py) mostramos como usar um sprite sheet para animar um personagem dependendo do seu estado atual.
 
 [![spritesheet.py](gifs/spritesheet.gif)](spritesheet.py)
+
+## Alternando textos
+
+Textos também são renderizados como imagens. O texto será desenhado na tela em diversos frames em sequência. No arquivo [text_animation.py](text_animation.py) mostramos como apresentar textos em sequência. Quando o usuário aperta a tecla ESPAÇO o próximo texto é apresentado.
+
+## Menu de texto
+
+No arquivo [text_menu.py](text_menu.py) apresentamos um exemplo de um menu de texto. Para compreender o código, estude primeiro o exemplo do [text_animation.py](text_animation.py).
 
 # Referências
 
