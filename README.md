@@ -67,6 +67,10 @@ No arquivo [spritesheet.py](spritesheet.py) mostramos como usar um sprite sheet 
 
 [![spritesheet.py](gifs/spritesheet.gif)](spritesheet.py)
 
+## Rotacionando o personagem de acordo com a posição do mouse
+
+O arquivo [rotate_with_mouse.py](rotate_with_mouse.py) mostra como podemos rotacionar a imagem do personagem baseado na diferença entre a posição atual do mouse, obtida com a função `pygame.mouse.get_pos()`, e a posição do personagem.
+
 ## Alternando textos
 
 Textos também são renderizados como imagens. O texto será desenhado na tela em diversos frames em sequência. No arquivo [text_animation.py](text_animation.py) mostramos como apresentar textos em sequência. Quando o usuário aperta a tecla ESPAÇO o próximo texto é apresentado.
