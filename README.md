@@ -81,7 +81,7 @@ No arquivo [text_menu.py](text_menu.py) apresentamos um exemplo de um menu de te
 
 # Múltiplas telas e classes
 
-No arquivo [multiple_screens.py] apresentamos um exemplo de múltiplas telas utilizando classes.
+No arquivo [multiple_screens.py](multiple_screens.py) apresentamos um exemplo de múltiplas telas utilizando classes.
 
 [![multiple_screens.py](gifs/multiple-screens.gif)](multiple_screens.py)
 
