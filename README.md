@@ -79,6 +79,12 @@ Textos também são renderizados como imagens. O texto será desenhado na tela e
 
 No arquivo [text_menu.py](text_menu.py) apresentamos um exemplo de um menu de texto. Para compreender o código, estude primeiro o exemplo do [text_animation.py](text_animation.py).
 
+# Múltiplas telas e classes
+
+No arquivo [multiple_screens.py] apresentamos um exemplo de múltiplas telas utilizando classes.
+
+[![multiple_screens.py](gifs/multiple-screens.gif)](multiple_screens.py)
+
 # Referências
 
 - [`hero.png`](img/hero.png): [https://opengameart.org/content/classic-hero](https://opengameart.org/content/classic-hero)
