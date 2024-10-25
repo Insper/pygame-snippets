@@ -2,7 +2,7 @@
 
 ## Construindo mapas com tiles
 
-[![tiles.py](gifs/tiles.png)](tiles.py)
+[![tiles/jogo.py](gifs/tiles.png)](tiles/jogo.py)
 
 _Tiles_ permitem a construção de mapas através do nosso código. Ao invés de termos uma grande imagem para o fundo podemos construir um mapa a partir de unidades menores (os _tiles_). Isso nos dá algumas vantagens:
 
@@ -13,7 +13,7 @@ _Tiles_ permitem a construção de mapas através do nosso código. Ao invés de
 - Mapa em camadas: podemos desenhar um tile sobre o outro, por exemplo, com um tile de arbusto sobre um tile de terra. Assim, quando o jogador corta o arbusto ele some, mas o de terra permanece.
 - As possibilidades são infinitas, use sua criatividade!
 
-Um exemplo de tiles com PyGame é apresentado em [tiles.py](tiles.py).
+Um exemplo de tiles com PyGame é apresentado em [tiles/jogo.py](tiles/jogo.py) (também existe uma [versão sem classes](tiles/jogo_sem_classes.py)).
 
 ## Fazendo o personagem pular
 
