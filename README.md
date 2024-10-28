@@ -17,11 +17,11 @@ Um exemplo de tiles com PyGame é apresentado em [tiles/jogo.py](tiles/jogo.py) 
 
 ## Fazendo o personagem pular
 
-Vamos apresentar alguns exemplos de como fazer o personagem pular ao apertarmos a tecla `ESPAÇO` ou a seta para cima. No primeiro exemplo ([jump.py](jump.py)) temos uma versão simplificada, assumindo que o chão está fixo em uma determinada altura.
+Vamos apresentar alguns exemplos de como fazer o personagem pular ao apertarmos a tecla `ESPAÇO` ou a seta para cima. No primeiro exemplo ([jump/jogo.py](jump/jogo.py) - também existe uma [versão sem classes](jump/jogo_sem_classes.py)) temos uma versão simplificada, assumindo que o chão está fixo em uma determinada altura.
 
 Nesse primeiro exemplo, precisamos guardar uma variável com o estado do personagem. Se ele já estiver pulando, ele não pode pular novamente. Se ele estiver parado, ele pode pular.
 
-[![jump.py](gifs/jump.gif)](jump.py)
+[![jump/jogo.py](gifs/jump.gif)](jump/jogo.py)
 
 No segundo exemplo ([jump_block.py](jump_block.py)), adicionamos blocos que impedem o jogador de passar. Para entender melhor o posicionamento dos blocos, veja os exemplos de _tiles_. A cada `update` atualizamos a posição `x` e `y` separadamente. Se o jogador colidir com um bloco depois de atualizarmos a posição horizontal, reposicionamos o seu `x` baseado na localização do bloco colidido e no sentido na direção horizontal que o jogador estava andando. Se o jogador colidir depois de atualizarmos a posição vertical, reposicionamos seu `y` baseado na localização do bloco e no sentido na direção vertical do jogador.
 
