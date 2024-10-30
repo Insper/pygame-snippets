@@ -19,40 +19,40 @@ class Tile(pygame.sprite.Sprite):
         self.rect = self.image.get_rect()
 
         # Posiciona o tile
-        self.rect.x = TILE_SIZE * column
-        self.rect.y = TILE_SIZE * row
+        self.rect.x = TAMANHO_QUADRADO * column
+        self.rect.y = TAMANHO_QUADRADO * row
 
 
 def inicializa():
     pygame.init()
 
-    window = pygame.display.set_mode((WIDTH, HEIGHT))
+    janela = pygame.display.set_mode((LARGURA, ALTURA))
     pygame.display.set_caption(TITULO)
 
     # Cada tile é uma imagem quadrada de TILE_SIZE x TILE_SIZE pixels.
     assets = {
-        GRASS: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-grass.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND1: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand1.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND2: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand2.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND3: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand3.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND4: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand4.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND5: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand5.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND6: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand6.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND7: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand7.png'), (TILE_SIZE, TILE_SIZE)),
-        SAND8: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand8.png'), (TILE_SIZE, TILE_SIZE)),
-        WATER: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-water.png'), (TILE_SIZE, TILE_SIZE)),
+        GRAMA_: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-grass.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA1: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand1.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA2: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand2.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA3: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand3.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA4: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand4.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA5: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand5.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA6: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand6.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA7: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand7.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AREIA8: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-sand8.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
+        AGUA__: pygame.transform.scale(pygame.image.load(IMG_DIR / 'tile-water.png'), (TAMANHO_QUADRADO, TAMANHO_QUADRADO)),
     }
     # Cria um grupo de tiles.
-    tile_map = pygame.sprite.Group()
+    mapa_tiles = pygame.sprite.Group()
     # Cria tiles de acordo com o mapa
-    for row in range(len(MAP)):
-        for column in range(len(MAP[row])):
-            tile_type = MAP[row][column]
-            tile = Tile(assets[tile_type], row, column)
-            tile_map.add(tile)
-    assets['tile_map'] = tile_map
+    for linha in range(len(MAPA)):
+        for coluna in range(len(MAPA[linha])):
+            tipo_quadrado = MAPA[linha][coluna]
+            quadrado = Tile(assets[tipo_quadrado], linha, coluna)
+            mapa_tiles.add(quadrado)
+    assets['mapa_tiles'] = mapa_tiles
 
-    return window, assets
+    return janela, assets
 
 
 def atualiza_estado():
@@ -62,19 +62,19 @@ def atualiza_estado():
     return True
 
 
-def game_loop(window, assets):
+def game_loop(janela, assets):
     while atualiza_estado():
-        desenha(window, assets)
+        desenha(janela, assets)
 
 
-def desenha(window, assets):
+def desenha(janela, assets):
     # A cada frame, redesenha o fundo e os sprites
-    window.fill(BLACK)
-    assets['tile_map'].draw(window)
+    janela.fill(PRETO)
+    assets['mapa_tiles'].draw(janela)
 
     pygame.display.update()
 
 
 if __name__ == '__main__':
-    window, assets = inicializa()
-    game_loop(window, assets)
+    janela, assets = inicializa()
+    game_loop(janela, assets)
